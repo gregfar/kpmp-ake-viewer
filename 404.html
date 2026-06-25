@@ -4,7 +4,6 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Link expired — reloading…</title>
 <style>
- :root{--accent2:#c9962f}
  *{box-sizing:border-box}
  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
   background:radial-gradient(1100px 520px at 72% -12%,rgba(201,150,47,.18),transparent 60%),linear-gradient(160deg,#08151f,#0b2233 42%,#0b3d5c);
@@ -13,20 +12,18 @@
   box-shadow:0 22px 64px rgba(0,0,0,.45);text-align:center}
  h1{font-family:Georgia,serif;font-size:23px;margin:0 0 .4em;color:#fff}
  p{font-size:14.5px;line-height:1.6;color:#cfe0ec}
- a.btn{display:inline-block;margin-top:18px;padding:12px 20px;border-radius:10px;background:var(--accent2);color:#08151f;font-weight:700;text-decoration:none}
+ a.btn{display:inline-block;margin-top:18px;padding:12px 20px;border-radius:10px;background:#c9962f;color:#08151f;font-weight:700;text-decoration:none}
 </style>
 <script>
-  // Any 404 on this host means an OLD/expired download link was clicked. The
-  // viewer is a single encrypted page; the PDFs exist only in-memory after
-  // unlock. Bounce to a cache-busted dashboard so the freshest version loads,
-  // then the user re-enters the password and the downloads work.
-  setTimeout(function(){ location.replace('/kpmp-ake-viewer/?r=' + Date.now()); }, 1500);
+  // Any 404 on this host = an old/expired download link was clicked. Bounce to a
+  // cache-busted dashboard root (relative) so the freshest viewer loads.
+  setTimeout(function(){ location.replace('./?r=' + Date.now()); }, 1500);
 </script>
 </head><body>
 <div class="box">
   <h1>That download link expired</h1>
   <p>It came from an older version of this page. Reloading the latest dashboard now —
-     please re-enter the password and the proposal downloads will work.</p>
-  <a class="btn" href="/kpmp-ake-viewer/?r=manual">Reload the dashboard</a>
+     please re-enter the password and the downloads will work.</p>
+  <a class="btn" href="./?r=manual">Reload the dashboard</a>
 </div>
 </body></html>
